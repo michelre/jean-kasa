@@ -6,6 +6,7 @@ import { Accomodation } from './pages/Accommodation';
 import { Error } from './pages/Error';
 import logo from './assets/logo.png'
 import { NavBar } from './components/NavBar';
+import { Footer } from './components/Footer';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="*" element={<Error />} />
         </Routes>
       </main>
+      <Footer />
     </BrowserRouter>
   );
 }
