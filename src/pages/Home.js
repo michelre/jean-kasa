@@ -1,3 +1,4 @@
+import './Home.css';
 import hero_banner from '../assets/hero_banner.jpg';
 import data from '../accommodations.json';
 import { Card } from '../components/Card';
@@ -12,7 +13,7 @@ export const Home = () => {
 
     return (
         <div>
-            <Banner picture={hero_banner} text="Chez vous, partout et ailleurs" />
+            <Banner picture={hero_banner} text="Chez vous, partout et ailleurs"/>
             <div className="accommodations-gallery">
                 {accommodations.map((accommodation) => (
                     <Link to={`/accommodation/${accommodation.id}`} key={accommodation.id}>

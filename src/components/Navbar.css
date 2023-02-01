@@ -1,0 +1,18 @@
+nav {
+    display: flex;
+    align-items: center;
+}
+
+nav a {
+    color: #FF6060;
+    font-weight: 400;
+    font-size: 24px;
+}
+
+ .active {
+ text-decoration: underline;
+}
+
+.navbar-text {
+    padding-right: 60px;
+}

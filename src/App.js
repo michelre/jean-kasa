@@ -4,18 +4,14 @@ import { Home } from './pages/Home';
 import { About } from './pages/About';
 import { Accommodation } from './pages/Accommodation';
 import { Error } from './pages/Error';
-import logo from './assets/logo.png'
-import { NavBar } from './components/NavBar';
 import { Footer } from './components/Footer';
+import { Header } from './components/Header';
 
 function App() {
   return (
     <BrowserRouter>
-      <header>
-        <img src={logo} alt="Kasa logo" className="main-logo"/>
-        <NavBar />
-      </header>
-      <main>
+    <Header ></Header>      
+      <main className="container">
         <Routes>
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
