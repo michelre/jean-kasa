@@ -1,22 +1,42 @@
 import './Home.css';
 import hero_banner from '../assets/hero_banner.jpg';
-import data from '../accommodations.json';
+//import data from '../accommodations.json';
 import { Card } from '../components/Card';
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import {useEffect, useState} from 'react';
 import { Banner } from '../components/Banner';
 
 
-export const Home = () => {
+const Home = () => {
 
-    const [accommodations, setAccommodations] = useState(data)
+    const [accommodations, setAccommodations] = useState(null)
+
+
+    useEffect(() => {
+        fetch('/accommodations.json')
+            .then(r => r.json())
+            .then((data) => {
+                console.log(data)
+                setAccommodations(data)
+            })
+    }, [])
+
+    if(!accommodations){
+        return null;
+    }
 
     return (
         <div>
-            <Banner picture={hero_banner} text="Chez vous, partout et ailleurs"/>
+            <Banner
+                picture={hero_banner}
+                text="Chez vous, partout et ailleurs"
+            />
             <div className="accommodations-gallery">
                 {accommodations.map((accommodation) => (
-                    <Link to={`/accommodation/${accommodation.id}`} key={accommodation.id}>
+                    <Link
+                        to={`/accommodation/${accommodation.id}`}
+                        key={accommodation.id}
+                    >
                         <Card cover={accommodation.cover} title={accommodation.title} />
                     </Link>
                 ))}
@@ -24,3 +44,5 @@ export const Home = () => {
         </div>
     )
 }
+
+export default Home;

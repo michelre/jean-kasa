@@ -3,6 +3,7 @@
     overflow: hidden;
     background-color: black;
     position: relative;
+    height: 150px;
 }
 
 .banner-picture {
