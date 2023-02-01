@@ -4,6 +4,7 @@ import { Carousel } from "../components/Carousel";
 import { useState } from "react";
 import { Rating } from "../components/Rating";
 import { Collapse } from "../components/Collapse";
+import { Tags } from "../components/Tags";
 
 export const Accommodation = () => {
     const { id } = useParams();
@@ -21,9 +22,7 @@ export const Accommodation = () => {
                 <h2>{host.name}</h2>
                 <img src={host.picture} alt={host.name} />
                 <div className="tags-rating-container">
-                    <div className="tags-container">
-
-                    </div>
+                    <Tags tags={tags}/>
                     <Rating rating={rating}/>
                 </div>
                 <div className="description-equipments-container">
